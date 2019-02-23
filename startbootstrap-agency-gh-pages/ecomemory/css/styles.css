@@ -1,0 +1,144 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+}
+
+body {
+    background: #ffffff url('../img/bg.jpg');
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1,h2,h3 {
+    font-family: 'Bubblegum Sans', cursive;
+    font-weight: 1000;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 1600px;
+    height: 700px;
+    background: linear-gradient(180deg, #439243 0%, #4dad4d 100%);
+    padding: 32px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.6);
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin: 0 0 3em;
+   
+}
+
+.deck .card {
+    height: 300px;
+    width: 175px;
+    background: #96f780;
+    font-size: 0;
+    color: #555555;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 5px 2px 15px 0 rgba(46, 61, 73, 0.5);;
+}
+
+.deck .card.open {
+    transform: rotateY(0) !important;
+    background: #eeeeee;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 15px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #2f80ed;
+    font-size: 15px;
+    color:#eeeeee !important;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+/*
+ * Responsiveness
+ */
+
+@media only screen and (max-width: 800px){
+    .deck .card{
+      width: 75px;
+      height: 75px;
+      line-height: 75px;
+    }
+  
+    .deck {
+      width: 500px;
+    }
+}
+  
+@media only screen and (max-width: 450px){
+    .deck .card{
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+  
+    .deck {
+      width: 300px;
+    }
+}
